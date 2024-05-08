@@ -1,0 +1,52 @@
+<div class="container mt-4">
+  <h2>Person Bearbeiten</h2>
+  <form (ngSubmit)="savePerson()">
+    <div class="mb-3">
+      <label for="firstName" class="form-label">Vorname:</label>
+      <input type="text" class="form-control" id="firstName" [(ngModel)]="person.firstName" name="firstName" required>
+    </div>
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Nachname:</label>
+      <input type="text" class="form-control" id="lastName" [(ngModel)]="person.lastName" name="lastName" required>
+    </div>
+    <div class="mb-3">
+      <label for="birthday" class="form-label">Geburtsdatum:</label>
+      <input type="date" class="form-control" id="birthday" [(ngModel)]="person.birthday" name="birthday" required>
+    </div>
+    <div class="mb-3">
+      <label for="gender" class="form-label">Geschlecht:</label>
+      <select class="form-select" id="gender" [(ngModel)]="person.gender" name="gender" required>
+        <option value="Male">Männlich</option>
+        <option value="Female">Weiblich</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="wheelchairUser" class="form-label">Rollstuhlnutzer:</label>
+      <select class="form-select" id="wheelchairUser" [(ngModel)]="person.wheelchairUser" name="wheelchairUser" required>
+        <option value="true">Ja</option>
+        <option value="false">Nein</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="startPoint" class="form-label">Startpunkt Adresse:</label>
+      <input type="text" class="form-control" id="startPoint" [(ngModel)]="person.startPoint" name="startPoint" required>
+    </div>
+    <div class="mb-3">
+      <label for="endPoint" class="form-label">Endpunkt Adresse:</label>
+      <input type="text" class="form-control" id="endPoint" [(ngModel)]="person.endPoint" name="endPoint" required>
+    </div>
+    <div class="d-flex justify-content-between">
+      <div>
+        <button type="submit" class="btn btn-modern-success me-2">Speichern</button>
+        <button type="button" class="btn btn-modern-danger" (click)="deletePerson()">Löschen</button>
+      </div>
+      <button type="button" class="btn btn-modern-secondary" (click)="goBack()">Zurück</button>
+    </div>
+  </form>
+
+  <!-- Map Display Section -->
+  <div class="map-section">
+    <h4 class="mt-4 mb-2">Personen Route auf der Karte</h4>
+    <div id="map" class="map-container mb-3"></div>
+  </div>
+</div>
