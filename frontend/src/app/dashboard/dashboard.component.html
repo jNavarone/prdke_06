@@ -1,9 +1,9 @@
 <mat-toolbar color="primary">
-  <span>Dashboard</span>
+  <span>Fahrzeugverwaltung</span>
 </mat-toolbar>
 
 <div class="container mt-4">
-  <mat-table [dataSource]="" class="mat-elevation-z8">
+  <mat-table [dataSource]="dataSourceVehicles" class="mat-elevation-z8">
 
     <!-- Table Definition Here -->
 
@@ -30,7 +30,7 @@
       </td>
     </ng-container>
 
-    <tr mat-header-row ></tr>
-    <tr mat-row *matRowDef="let row; "></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsVehicles"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumnsVehicles;"></tr>
   </mat-table>
 </div>

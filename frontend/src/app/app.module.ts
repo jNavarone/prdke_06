@@ -9,15 +9,17 @@ import { HeaderComponent } from './header/header.component';
 import { PersonCreateComponent } from './person-create/person-create.component';
 import { HttpClientModule } from "@angular/common/http";
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PersonEditComponent } from './person-edit/person-edit.component';
+import { PersonListComponent } from './person-list/person-list.component';
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatTableModule} from "@angular/material/table";
 import {MatToolbarModule} from "@angular/material/toolbar";
 
-
 const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'createPerson', component: PersonCreateComponent},
-
+  {path: 'createVehicle', component: PersonCreateComponent},
+  {path: 'listVehicle', component: PersonListComponent},
+  {path: 'editVehicle/:id', component: PersonEditComponent}
 ];
 
 @NgModule({
@@ -26,9 +28,10 @@ const routes: Routes = [
     HeaderComponent,
     PersonCreateComponent,
     DashboardComponent,
+    PersonEditComponent,
+    PersonListComponent
   ],
   imports: [
-
     RouterModule.forRoot(routes),
     BrowserModule,
     AppRoutingModule,
@@ -38,13 +41,9 @@ const routes: Routes = [
     MatTabsModule,
     MatTableModule,
     MatToolbarModule,
-
   ],
   providers: [
     DatePipe
-  ],
-  exports: [
-    HeaderComponent
   ],
   bootstrap: [AppComponent]
 })

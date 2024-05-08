@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
+@Table(name = "Persons")
 public class Person {
 
     @Id
@@ -25,15 +26,15 @@ public class Person {
 
     private String startPoint;
 
-    private double startLatitude;
+    private double startPointLatitude;
 
-    private double startLongitude;
+    private double startPointLongitude;
 
     private String endPoint;
 
-    private double endLatitude;
+    private double endPointLatitude;
 
-    private double endLongitude;
+    private double endPointLongitude;
 
     // Getters
     public Long getId() {
@@ -68,24 +69,24 @@ public class Person {
         return startPoint;
     }
 
-    public double getStartLatitude() {
-        return startLatitude;
+    public double getStartPointLatitude() {
+        return startPointLatitude;
     }
 
-    public double getStartLongitude() {
-        return startLongitude;
+    public double getStartPointLongitude() {
+        return startPointLongitude;
     }
 
     public String getEndPoint() {
         return endPoint;
     }
 
-    public double getEndLatitude() {
-        return endLatitude;
+    public double getEndPointLatitude() {
+        return endPointLatitude;
     }
 
-    public double getEndLongitude() {
-        return endLongitude;
+    public double getEndPointLongitude() {
+        return endPointLongitude;
     }
 
     // Setters
@@ -124,23 +125,23 @@ public class Person {
     }
 
     public void setStartLatitude(double startLatitude) {
-        this.startLatitude = startLatitude;
+        this.startPointLatitude = startLatitude;
     }
 
     public void setStartLongitude(double startLongitude) {
-        this.startLongitude = startLongitude;
+        this.startPointLongitude = startLongitude;
     }
 
     public void setEndPoint(String endPoint) {
         this.endPoint = endPoint;
     }
 
-    public void setEndLatitude(double endLatitude) {
-        this.endLatitude = endLatitude;
+    public void setEndPointLatitude(double endLatitude) {
+        this.endPointLatitude = endLatitude;
     }
 
-    public void setEndLongitude(double endLongitude) {
-        this.endLongitude = endLongitude;
+    public void setEndPointLongitude(double endLongitude) {
+        this.endPointLongitude = endLongitude;
     }
 
 }

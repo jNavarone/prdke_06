@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-
-import { RouterOutlet } from '@angular/router';
-import {AppModule} from "./app.module";
+import { Chart } from 'chart.js/auto';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +9,5 @@ import {AppModule} from "./app.module";
 
 
 export class AppComponent {
-  title = 'frontend';
+  title = 'Transportdienstleister Portal';
 }
-
-
-
-
