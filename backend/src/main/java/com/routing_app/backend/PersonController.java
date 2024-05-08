@@ -10,18 +10,17 @@ import java.util.List;
 public class PersonController {
 
     @Autowired
-    private PersonRepository personRepository;
+    private PersonService personService;
 
     @GetMapping
     public List<Person> getAllPeople() {
-        return personRepository.findAll();
+        return personService.getAllPeople();
     }
 
     @PostMapping
     public Person createPerson(@RequestBody Person person) {
-        return personRepository.save(person);
+        return personService.savePerson(person);
     }
-
 
 }
 

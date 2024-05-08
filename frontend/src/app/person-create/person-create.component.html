@@ -1,0 +1,47 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <h2>Neues Fahrzeug Anlegen</h2>
+      <form (ngSubmit)="savePerson()" #vehicleForm="ngForm">
+        <div class="mb-3">
+          <label for="vehicleType" class="form-label">Fahrzeugtyp:</label>
+          <input type="text" class="form-control" id="vehicleType" [(ngModel)]="firstName" name="vehicleType" required>
+        </div>
+        <div class="mb-3">
+          <label for="vehicleName" class="form-label">Fahrzeugbezeichnung:</label>
+          <input type="text" class="form-control" id="vehicleName" [(ngModel)]="lastName" name="vehicleName" required>
+        </div>
+        <div class="mb-3">
+          <label for="seats" class="form-label">Sitzplätze:</label>
+          <input type="number" class="form-control" id="seats" [(ngModel)]="gender" name="seats" min="1" required>
+        </div>
+        <div class="mb-3">
+          <label for="wheelchairAccessible" class="form-label">Rollstuhlgerecht:</label>
+          <select class="form-select" id="wheelchairAccessible" [(ngModel)]="wheelchairUser" name="wheelchairAccessible" required>
+            <option [ngValue]="true">Ja</option>
+            <option [ngValue]="false">Nein</option>
+          </select>
+        </div>
+        <!-- Start Point Address -->
+        <div class="mb-3">
+          <label for="startPoint" class="form-label">Startpunkt Adresse:</label>
+          <input type="text" class="form-control" id="startPoint" [(ngModel)]="startPoint" name="startPoint" required>
+        </div>
+        <!-- End Point Address -->
+        <div class="mb-3">
+          <label for="endPoint" class="form-label">Endpunkt Adresse:</label>
+          <input type="text" class="form-control" id="endPoint" [(ngModel)]="endPoint" name="endPoint" required>
+        </div>
+
+        <!-- Map Display Section -->
+        <div class="map-section">
+          <h4 class="mt-4 mb-2">Route auf der Karte</h4>
+          <div id="map" class="map-container mb-3"></div>
+        </div>
+
+        <button type="submit" class="btn btn-smooth-green">Speichern</button>
+        <button type="button" class="btn btn-smooth-primary" (click)="resetForm()">Formular zurücksetzen</button>
+      </form>
+    </div>
+  </div>
+</div>
