@@ -34,28 +34,8 @@ interface Vehicle {
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  displayedColumnsRoutes: string[] = ['startPoint', 'endPoint', 'firstName', 'lastName'];
-  dataSourceRoutes: Route[] = []; // Updated to use Route interface
+    ngOnInit(): void {
+        throw new Error('Method not implemented.');
+    }
 
-  displayedColumnsVehicles: string[] = ['firstName', 'lastName', 'gender', 'wheelchairAccessible'];
-  dataSourceVehicles: Vehicle[] = []; // Updated to use Vehicle interface
-
-  constructor(private http: HttpClient) {}
-
-  ngOnInit() {
-    this.fetchAllRoutes();
-    this.fetchAllVehicles();
-  }
-
-  fetchAllRoutes() {
-    this.http.get<Route[]>('http://localhost:8080/routes').subscribe(data => {
-      this.dataSourceRoutes = data;
-    }, error => console.error('There was an error fetching the routes', error));
-  }
-
-  fetchAllVehicles() {
-    this.http.get<Vehicle[]>('http://localhost:8080/vehicles').subscribe(data => {
-      this.dataSourceVehicles = data;
-    }, error => console.error('There was an error fetching the vehicles', error));
-  }
 }
