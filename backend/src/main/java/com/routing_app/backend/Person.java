@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.util.Date;
 
+
 @Entity
 @Table(name = "Persons")
 public class Person {
@@ -136,12 +137,12 @@ public class Person {
         this.endPoint = endPoint;
     }
 
-    public void setEndPointLatitude(double endLatitude) {
-        this.endPointLatitude = endLatitude;
-    }
-
     public void setEndPointLongitude(double endLongitude) {
         this.endPointLongitude = endLongitude;
+    }
+
+    public void setEndPointLatitude(double endLatitude) {
+        this.endPointLatitude = endLatitude;
     }
 
 }

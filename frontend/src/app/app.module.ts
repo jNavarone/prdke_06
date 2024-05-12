@@ -17,9 +17,9 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 
 const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'createVehicle', component: PersonCreateComponent},
-  {path: 'listVehicle', component: PersonListComponent},
-  {path: 'editVehicle/:id', component: PersonEditComponent}
+  {path: 'createPerson', component: PersonCreateComponent},
+  {path: 'listPerson', component: PersonListComponent},
+  {path: 'editPerson/:id', component: PersonEditComponent}
 ];
 
 @NgModule({

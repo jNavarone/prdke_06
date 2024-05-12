@@ -9,5 +9,5 @@ import { Chart } from 'chart.js/auto';
 
 
 export class AppComponent {
-  title = 'Transportdienstleister Portal';
+  title = 'Stammdatenverwaltung';
 }
