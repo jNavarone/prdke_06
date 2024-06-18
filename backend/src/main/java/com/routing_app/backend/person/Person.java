@@ -1,4 +1,4 @@
-package com.routing_app.backend;
+package com.routing_app.backend.person;
 
 import jakarta.persistence.*;
 

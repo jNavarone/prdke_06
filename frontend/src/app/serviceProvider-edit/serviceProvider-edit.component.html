@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <h2>Transportdienstleister bearbeiten</h2>
+  <form (ngSubmit)="saveServiceProvider()">
+    <div class="mb-3">
+      <label for="companyName" class="form-label">Firmenname:</label>
+      <input type="text" class="form-control" id="companyName" [(ngModel)]="serviceProvider.companyName" name="companyName" required>
+    </div>
+    <div class="mb-3">
+      <label for="eMailAddress" class="form-label">E-Mail-Adresse:</label>
+      <input type="text" class="form-control" id="eMailAddress" [(ngModel)]="serviceProvider.eMailAddress" name="eMailAddress" required>
+    </div>
+    <div class="mb-3">
+      <label for="startPoint" class="form-label">Startpunkt Adresse:</label>
+      <input type="text" class="form-control" id="startPoint" [(ngModel)]="serviceProvider.startPoint" name="startPoint" required>
+    </div>
+    <div class="d-flex justify-content-between">
+      <div>
+        <button type="submit" class="btn btn-modern-success me-2">Speichern</button>
+        <button type="button" class="btn btn-modern-danger" (click)="deleteServiceProvider()">Löschen</button>
+      </div>
+      <button type="button" class="btn btn-modern-secondary" (click)="goBack()">Zurück</button>
+    </div>
+  </form>
+
+  <!-- Map Display Section -->
+  <div class="map-section">
+    <h4 class="mt-4 mb-2">Personen Route auf der Karte</h4>
+    <div id="map" class="map-container mb-3"></div>
+  </div>
+</div>

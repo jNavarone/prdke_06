@@ -11,15 +11,22 @@ import { HttpClientModule } from "@angular/common/http";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PersonEditComponent } from './person-edit/person-edit.component';
 import { PersonListComponent } from './person-list/person-list.component';
+import { ServiceProviderCreateComponent } from './serviceProvider-create/serviceProvider-create.component';
+import { ServiceProviderEditComponent } from './serviceProvider-edit/serviceProvider-edit.component';
+import {ServiceProviderListComponent} from "./serviceProvider-list/serviceProvider-list.component";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatTableModule} from "@angular/material/table";
 import {MatToolbarModule} from "@angular/material/toolbar";
+
 
 const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'createPerson', component: PersonCreateComponent},
   {path: 'listPerson', component: PersonListComponent},
-  {path: 'editPerson/:id', component: PersonEditComponent}
+  {path: 'editPerson/:id', component: PersonEditComponent},
+  {path: 'createServiceProvider', component: ServiceProviderCreateComponent},
+  {path: 'editServiceProvider', component: ServiceProviderEditComponent},
+  {path: 'listServiceProvider', component: ServiceProviderListComponent},
 ];
 
 @NgModule({
@@ -29,7 +36,10 @@ const routes: Routes = [
     PersonCreateComponent,
     DashboardComponent,
     PersonEditComponent,
-    PersonListComponent
+    PersonListComponent,
+    ServiceProviderCreateComponent,
+    ServiceProviderEditComponent,
+    ServiceProviderListComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

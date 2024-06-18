@@ -1,0 +1,26 @@
+<h2>Transportdienstleister Liste</h2>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead class="thead-light">
+    <tr>
+      <th>#</th>
+      <th>Firmenname</th>
+      <th>E-Mail-Adresse</th>
+      <th>Startpunkt</th>
+      <th>Aktionen</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let serviceProvider of serviceProviders; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ serviceProvider.companyName }}</td>
+      <td>{{ serviceProvider.eMailAddress }}</td>
+      <td>{{ serviceProvider.startPoint }}</td>
+      <td>
+        <button class="btn btn-sm btn-outline-edit" (click)="editServiceProvider(serviceProvider.id)">Bearbeiten</button>
+        <button class="btn btn-sm btn-outline-danger" (click)="deleteServiceProvider(serviceProvider.id)">Löschen</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

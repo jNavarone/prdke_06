@@ -1,4 +1,4 @@
-package com.routing_app.backend;
+package com.routing_app.backend.person;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,0 +1,23 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <h2>Transportdienstleister hinzufügen</h2>
+      <form (ngSubmit)="saveServiceProvider()" #serviceProviderForm="ngForm">
+        <div class="mb-3">
+          <label for="companyName" class="form-label">Firmenname:</label>
+          <input type="text" class="form-control" id="companyName" [(ngModel)]="companyName" name="companyName" required>
+        </div>
+        <div class="mb-3">
+          <label for="eMailAddress" class="form-label">E-Mail-Adresse:</label>
+          <input type="text" class="form-control" id="eMailAddress" [(ngModel)]="eMailAddress" name="eMailAddress" required>
+        </div>
+        <div class="mb-3">
+          <label for="startPoint" class="form-label">Startpunkt:</label>
+          <input type="text" class="form-control" id="startPoint" [(ngModel)]="startPoint" name="startPoint" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Speichern</button>
+        <button type="button" class="btn btn-secondary" (click)="resetForm()">Formular zurücksetzen</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-package com.routing_app.backend;
+package com.routing_app.backend.person;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,7 +45,6 @@ public class PersonService {
             return personRepository.save(person);
         });
     }
-
 
     @Transactional
     public boolean deletePerson(Long id) {

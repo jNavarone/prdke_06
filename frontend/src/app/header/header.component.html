@@ -18,13 +18,23 @@
           <a routerLink="/dashboard" routerLinkActive="active" class="nav-link">Dashboard</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="vehicleDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="personDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Personenverwaltung
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" routerLink="/createPerson">Neue Person</a>
             <a class="dropdown-item" routerLink="/listPerson">Personenliste</a>
           </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="serviceProviderDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Transportdienstleister
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/createServiceProvider">Neuer Transportdienstleister</a>
+            <a class="dropdown-item" routerLink="/listServiceProvider">Transportdienstleister Liste</a>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
