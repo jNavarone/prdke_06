@@ -14,7 +14,7 @@
     <tr *ngFor="let serviceProvider of serviceProviders; let i = index">
       <td>{{ i + 1 }}</td>
       <td>{{ serviceProvider.companyName }}</td>
-      <td>{{ serviceProvider.eMailAddress }}</td>
+      <td>{{ serviceProvider.emailAddress }}</td>
       <td>{{ serviceProvider.startPoint }}</td>
       <td>
         <button class="btn btn-sm btn-outline-edit" (click)="editServiceProvider(serviceProvider.id)">Bearbeiten</button>

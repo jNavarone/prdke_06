@@ -158,6 +158,17 @@ export class PersonEditComponent implements OnInit, AfterViewInit {
   async savePerson(): Promise<void> {
     // Assuming you have a service to fetch coordinates, else skip this part
     try {
+
+      // Fetch new coordinates for the start and end points
+      const startPointCoords = await firstValueFrom(this.geocodeService.getCoordinates(this.person.startPoint));
+      const endPointCoords = await firstValueFrom(this.geocodeService.getCoordinates(this.person.endPoint));
+
+      // Update the persons object new coordinates
+      this.person.startPointLatitude = startPointCoords.latitude;
+      this.person.startPointLongitude = startPointCoords.longitude;
+      this.person.endPointLatitude = endPointCoords.latitude;
+      this.person.endPointLongitude = endPointCoords.longitude;
+
       // Proceed to update the person as before
       if (this.person.id) {
         await firstValueFrom(this.http.put(`http://localhost:8080/people/${this.person.id}`, this.person));

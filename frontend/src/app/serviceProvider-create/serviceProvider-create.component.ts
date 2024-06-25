@@ -6,7 +6,7 @@ import { firstValueFrom } from 'rxjs';
 interface ServiceProvider {
   id?: any;
   companyName: string;
-  eMailAddress: any;
+  emailAddress: string;
   startPoint: any;
   startPointLatitude?: any;
   startPointLongitude?: any;
@@ -23,7 +23,7 @@ export class ServiceProviderCreateComponent implements OnInit {
 
   // Form fields
   companyName: string = '';
-  eMailAddress: any;
+  emailAddress: string = '';
   startPoint: string = '';
 
   constructor(private http: HttpClient, private geocodeService: GeocodeService) {}
@@ -49,7 +49,7 @@ export class ServiceProviderCreateComponent implements OnInit {
       const serviceProvider: ServiceProvider = {
         id: this.selectedServiceProvider?.id,
         companyName: this.companyName,
-        eMailAddress: this.eMailAddress,
+        emailAddress: this.emailAddress,
         startPoint: this.startPoint,
         startPointLatitude: startPointCoords.latitude,
         startPointLongitude: startPointCoords.longitude,
@@ -84,7 +84,7 @@ export class ServiceProviderCreateComponent implements OnInit {
   resetForm(): void {
     this.selectedServiceProvider = null;
     this.companyName = '';
-    this.eMailAddress = '';
+    this.emailAddress = '';
     this.startPoint = '';
     this.loadServiceProviders(); // Reload persons to reflect changes
   }

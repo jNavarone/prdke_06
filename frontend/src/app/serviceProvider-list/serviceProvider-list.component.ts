@@ -5,7 +5,7 @@ import { Router } from "@angular/router";
 interface ServiceProvider {
   id: number;
   companyName: string;
-  eMailAddress: string;
+  emailAddress: string;
   startPoint: string;
 }
 
@@ -27,19 +27,19 @@ export class ServiceProviderListComponent implements OnInit {
   }
 
   loadServiceProviders(): void {
-    this.http.get<ServiceProvider[]>('http://localhost:8080/serviceProviders/').subscribe({
+    this.http.get<ServiceProvider[]>('http://localhost:8080/providers/').subscribe({
       next: (data) => this.serviceProviders = data,
       error: (error) => console.error(error)
     });
   }
 
   editServiceProvider(id: number): void {
-    this.router.navigate(['/editServiceProvider', id]);
+    this.router.navigate(['/editProvider', id]);
   }
 
   deleteServiceProvider(id: number): void {
     if (confirm('Sind Sie sicher das sie den Transportdienstleister löschen möchten?')) {
-      this.http.delete(`http://localhost:8080/serviceProviders/${id}`).subscribe({
+      this.http.delete(`http://localhost:8080/providers/${id}`).subscribe({
         next: () => {
           alert('Transportdienstleister erfolgreich gelöscht!');
           this.loadServiceProviders(); // Refresh the list after deletion
